@@ -1,0 +1,24 @@
+<div class="login-page">
+  <div class="card">
+    <h1>Estacionamento</h1>
+    <p class="subtitle">Faça login para continuar</p>
+
+    <form [formGroup]="form" (ngSubmit)="entrar()">
+      <label>
+        E-mail
+        <input type="email" formControlName="email" placeholder="email@exemplo.com">
+      </label>
+
+      <label>
+        Senha
+        <input type="password" formControlName="senha" placeholder="••••••••">
+      </label>
+
+      <button type="submit" [disabled]="form.invalid || carregando()">
+        {{ carregando() ? 'Entrando...' : 'Entrar' }}
+      </button>
+
+      <p class="erro" *ngIf="erro()">{{ erro() }}</p>
+    </form>
+  </div>
+</div>

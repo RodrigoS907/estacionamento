@@ -1,0 +1,8 @@
+package com.estacionamento.dto.auth;
+
+public record LoginResponse(
+        String token,
+        String nome,
+        String email,
+        String papel
+) {}

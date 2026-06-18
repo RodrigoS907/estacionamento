@@ -1,0 +1,62 @@
+<svg width="100%" viewBox="0 0 680 470" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Arquitetura do sistema de estacionamento</title>
+<desc>Frontend Angular se comunica via REST com backend Spring Boot, que persiste em PostgreSQL e armazena fotos em disco local.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="#475569" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+<style>
+.bg-purple { fill: #ede9fe; stroke: #8b5cf6; }
+.bg-teal { fill: #f0fdfa; stroke: #14b8a6; }
+.bg-blue { fill: #dbeafe; stroke: #3b82f6; }
+.bg-amber { fill: #fef3c7; stroke: #f59e0b; }
+.bg-coral { fill: #fee2e2; stroke: #ef4444; }
+.bg-gray { fill: #f1f5f9; stroke: #64748b; }
+.th { font: 600 14px sans-serif; fill: #1e293b; }
+.ts { font: 12px sans-serif; fill: #475569; }
+.arr { stroke: #475569; stroke-width: 1.5; fill: none; }
+</style>
+</defs>
+
+<rect x="40" y="40" width="200" height="100" rx="10" class="bg-purple" stroke-width="1.5"/>
+<text class="th" x="140" y="72" text-anchor="middle" dominant-baseline="central">Frontend Angular</text>
+<text class="ts" x="140" y="94" text-anchor="middle" dominant-baseline="central">Operador no celular</text>
+<text class="ts" x="140" y="112" text-anchor="middle" dominant-baseline="central">Câmera traseira via PWA</text>
+
+<rect x="280" y="40" width="220" height="280" rx="12" class="bg-teal" stroke-width="1.5"/>
+<text class="th" x="390" y="62" text-anchor="middle" dominant-baseline="central">Backend Spring Boot</text>
+
+<rect x="300" y="90" width="180" height="44" rx="6" class="bg-blue" stroke-width="1.5"/>
+<text class="th" x="390" y="106" text-anchor="middle" dominant-baseline="central">JWT Security</text>
+<text class="ts" x="390" y="122" text-anchor="middle" dominant-baseline="central">Login e autorização</text>
+
+<rect x="300" y="150" width="180" height="44" rx="6" class="bg-blue" stroke-width="1.5"/>
+<text class="th" x="390" y="166" text-anchor="middle" dominant-baseline="central">REST Controllers</text>
+<text class="ts" x="390" y="182" text-anchor="middle" dominant-baseline="central">Veículos, acessos, etc.</text>
+
+<rect x="300" y="210" width="180" height="44" rx="6" class="bg-amber" stroke-width="1.5"/>
+<text class="th" x="390" y="226" text-anchor="middle" dominant-baseline="central">OCR Service</text>
+<text class="ts" x="390" y="242" text-anchor="middle" dominant-baseline="central">Tesseract leitura de placa</text>
+
+<rect x="300" y="270" width="180" height="40" rx="6" class="bg-amber" stroke-width="1.5"/>
+<text class="th" x="390" y="284" text-anchor="middle" dominant-baseline="central">File Storage</text>
+<text class="ts" x="390" y="300" text-anchor="middle" dominant-baseline="central">Pasta uploads local</text>
+
+<rect x="540" y="100" width="100" height="60" rx="8" class="bg-coral" stroke-width="1.5"/>
+<text class="th" x="590" y="124" text-anchor="middle" dominant-baseline="central">PostgreSQL</text>
+<text class="ts" x="590" y="142" text-anchor="middle" dominant-baseline="central">JPA + Flyway</text>
+
+<rect x="540" y="260" width="100" height="60" rx="8" class="bg-gray" stroke-width="1.5"/>
+<text class="th" x="590" y="284" text-anchor="middle" dominant-baseline="central">Disco local</text>
+<text class="ts" x="590" y="302" text-anchor="middle" dominant-baseline="central">Fotos JPEG</text>
+
+<line x1="240" y1="90" x2="280" y2="90" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="260" y="80" text-anchor="middle">REST + JWT</text>
+
+<line x1="480" y1="124" x2="540" y2="124" class="arr" marker-end="url(#arrow)"/>
+<line x1="480" y1="290" x2="540" y2="290" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="40" y="370" width="600" height="60" rx="8" class="bg-gray" stroke-width="1.5"/>
+<text class="th" x="340" y="392" text-anchor="middle" dominant-baseline="central">Fluxo de entrada</text>
+<text class="ts" x="340" y="412" text-anchor="middle" dominant-baseline="central">Foto no celular → OCR sugere placa → operador confirma → registro aberto no banco</text>
+</svg>

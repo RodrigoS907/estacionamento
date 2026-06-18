@@ -1,0 +1,26 @@
+<div class="layout">
+  <aside class="sidebar">
+    <div class="logo">
+      <span class="logo-mark">P</span>
+      <span class="logo-text">Estacionamento</span>
+    </div>
+
+    <nav class="nav">
+      <a routerLink="/portaria" routerLinkActive="active">Portaria</a>
+      <a routerLink="/veiculos" routerLinkActive="active">Veículos</a>
+      <a *ngIf="ehAdmin()" routerLink="/mensalistas" routerLinkActive="active">Mensalistas</a>
+    </nav>
+
+    <div class="user">
+      <div class="user-info">
+        <strong>{{ usuario()?.nome }}</strong>
+        <small>{{ usuario()?.papel }}</small>
+      </div>
+      <button class="btn-sair" (click)="sair()">Sair</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
